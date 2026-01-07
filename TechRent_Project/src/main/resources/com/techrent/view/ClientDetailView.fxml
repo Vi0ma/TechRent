@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15.0" style="-fx-padding: 30; -fx-background-color: -color-bg-default;" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techrent.controller.ClientDetailController">
+    <children>
+        <Label text="Modifier le Client" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <Label text="Mettez à jour les informations ou supprimez la fiche." style="-fx-text-fill: -color-fg-muted;" />
+
+        <Region prefHeight="10.0" />
+
+        <HBox spacing="10.0">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Prénom" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <TextField fx:id="txtPrenom" />
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Nom" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <TextField fx:id="txtNom" />
+            </VBox>
+        </HBox>
+
+        <VBox>
+            <Label text="Société" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+            <TextField fx:id="txtSociete" />
+        </VBox>
+
+        <HBox spacing="10.0">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Email" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <TextField fx:id="txtEmail" />
+            </VBox>
+            <VBox prefWidth="150.0">
+                <Label text="Téléphone" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <TextField fx:id="txtTel" />
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10.0">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Ville" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <TextField fx:id="txtVille" />
+            </VBox>
+            <VBox prefWidth="150.0">
+                <Label text="Statut" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <ComboBox fx:id="comboStatut" maxWidth="Infinity" />
+            </VBox>
+        </HBox>
+
+        <Region prefHeight="20.0" />
+
+        <HBox spacing="10.0" alignment="CENTER_RIGHT">
+            <Button text="Supprimer" styleClass="danger" onAction="#handleSupprimer"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Annuler" styleClass="flat" onAction="#handleAnnuler"/>
+            <Button text="Enregistrer" styleClass="accent" style="-fx-font-weight: bold;" onAction="#handleEnregistrer"/>
+        </HBox>
+    </children>
+</VBox>

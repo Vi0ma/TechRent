@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="711.0" spacing="30.0" style="-fx-background-color: -color-bg-default; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techrent.controller.MaterielDetailController">
+    <children>
+
+        <VBox alignment="TOP_CENTER" prefWidth="250.0" spacing="15.0">
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-text-fill: -color-fg-muted;" text="Image du produit" />
+
+                <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: -color-border-subtle; -fx-border-radius: 10; -fx-background-color: -color-bg-subtle; -fx-background-radius: 10;">
+                    <children>
+                        <ImageView fx:id="imageProduit" fitHeight="200.0" fitWidth="220.0" preserveRatio="true" />
+                    </children>
+                </VBox>
+
+                <Button onAction="#handleChangerImage" styleClass="flat" text="Changer l'image..." />
+            </children>
+        </VBox>
+
+        <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Détails du produit" />
+                <Label style="-fx-text-fill: -color-fg-muted;" text="Modifiez les informations ci-dessous." />
+
+                <Region prefHeight="10.0" />
+
+                <VBox spacing="5.0">
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="Référence" />
+                    <TextField fx:id="txtRef" />
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="Nom du matériel" />
+                    <TextField fx:id="txtNom" />
+                </VBox>
+
+                <HBox spacing="15.0">
+                    <children>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="Prix / Jour" />
+                            <TextField fx:id="txtPrix" />
+                        </VBox>
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="État actuel" />
+                            <ComboBox fx:id="comboEtat" maxWidth="Infinity" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <VBox spacing="5.0">
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold;" text="Catégorie" />
+                    <ComboBox fx:id="comboCategorie" editable="true" maxWidth="Infinity" />
+                </VBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <Button onAction="#handleSupprimer" styleClass="danger" text="Supprimer" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleAnnuler" styleClass="flat" text="Annuler" />
+                    <Button onAction="#handleEnregistrer" style="-fx-font-weight: bold;" styleClass="accent" text="Enregistrer" />
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</HBox>

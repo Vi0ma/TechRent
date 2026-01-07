@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainLayout" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.techrent.controller.AccueilController">
+
+    <left>
+        <VBox prefWidth="280.0" spacing="15.0" style="-fx-background-color: -color-bg-subtle; -fx-border-color: transparent -color-border-subtle transparent transparent;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="40" right="20" bottom="20" left="20"/>
+            </padding>
+            <children>
+                <Label text="NAVIGATION" style="-fx-font-size: 13px; -fx-text-fill: -color-fg-muted; -fx-font-weight: bold;">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Button text="Accueil" maxWidth="Infinity" styleClass="accent" alignment="BASELINE_LEFT" prefHeight="50.0" onAction="#handleAfficherAccueil" style="-fx-font-size: 14px; -fx-font-weight:bold;"/>
+                <Button text="Matériels" maxWidth="Infinity" styleClass="flat" alignment="BASELINE_LEFT" prefHeight="50.0" onAction="#handleAfficherMateriels" style="-fx-font-size: 14px;"/>
+                <Button text="Clients" maxWidth="Infinity" styleClass="flat" alignment="BASELINE_LEFT" prefHeight="50.0" onAction="#handleAfficherClients" style="-fx-font-size: 14px;"/>
+                <Button text="Locations" maxWidth="Infinity" styleClass="flat" alignment="BASELINE_LEFT" prefHeight="50.0" onAction="#handleAfficherLocations" style="-fx-font-size: 14px;"/>
+
+                <Region prefHeight="40.0" />
+                <Label text="ALERTE" style="-fx-font-size: 13px; -fx-text-fill: -color-fg-muted; -fx-font-weight: bold;">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Button text="Pannes" maxWidth="Infinity" styleClass="danger" alignment="BASELINE_LEFT" prefHeight="50.0" style="-fx-font-size: 14px;" onAction="#handleAfficherPannes"/>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="25.0" style="-fx-padding: 40;">
+            <children>
+
+                <Label text="Tableau de Bord" style="-fx-font-size: 36px; -fx-font-weight: bold;" />
+                <Separator />
+
+                <HBox spacing="20.0">
+                    <VBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to bottom right, #4facfe, #00f2fe); -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                        <Label text="LOCATIONS EN COURS" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-opacity: 0.8; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblLocationsEnCours" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+                    </VBox>
+
+                    <VBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to bottom right, #ff0844, #ffb199); -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                        <Label text="RETARDS DE RETOUR" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-opacity: 0.8; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblRetards" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+                    </VBox>
+
+                    <VBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to bottom right, #43e97b, #38f9d7); -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                        <Label text="MATÉRIELS DISPONIBLES" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-opacity: 0.8; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblMaterielsDispo" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+                    </VBox>
+
+                    <VBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to bottom right, #a18cd1, #fbc2eb); -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                        <Label text="REVENU JOURNALIER ESTIMÉ" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-opacity: 0.8; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblRevenuEstime" text="0 MAD" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+
+                    <VBox alignment="CENTER" style="-fx-background-color: -color-bg-subtle; -fx-background-radius: 15; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+                        <Label text="Répartition du Materiel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <PieChart fx:id="pieChartEtat" titleSide="BOTTOM" legendSide="BOTTOM" maxHeight="280.0" maxWidth="280.0" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+
+                    <VBox style="-fx-background-color: -color-bg-subtle; -fx-background-radius: 15; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+                        <Label text="📅 À Surveiller" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: -color-danger-fg;"/>
+                        <ListView fx:id="listRetoursUrgents" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;"/>
+                    </VBox>
+
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>
