@@ -1,4 +1,4 @@
-#  TechRent - IT Equipment Rental Management
+#  TechRent - IT Equipment Rental Management System
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-blue?style=for-the-badge)
