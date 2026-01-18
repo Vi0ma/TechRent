@@ -1,97 +1,100 @@
-#  TechRent - Gestion de Location de Matériel IT
+#  TechRent - IT Equipment Rental Management
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-blue?style=for-the-badge)
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-**TechRent Pro** est une application de bureau complète conçue pour gérer le cycle de vie de la location de matériel informatique (PC, projecteurs, serveurs, etc.). Elle permet de gérer les stocks, les clients, les contrats de location et le suivi de maintenance via une interface moderne et intuitive.
+**TechRent Pro** is a comprehensive desktop application designed to manage the lifecycle of IT equipment rentals (PCs, projectors, servers, etc.). It allows for the management of inventory, clients, rental contracts, and maintenance tracking via a modern and intuitive interface.
 
 ---
 
-##  Aperçu
+##  Overview
 
-| Tableau de Bord | Planning des Locations |
+| Dashboard | Rental Planning |
 |:---:|:---:|
-| Dashboard | Planning |
-| *Statistiques en temps réel et alertes* | *Vue calendrier interactive (CalendarFX)* |
+| ![Dashboard](image_fbef28.png) | ![Planning](image_fb8672.png) |
+| *Real-time statistics and alerts* | *Interactive calendar view (CalendarFX)* |
 
 ---
 
-##  Fonctionnalités Clés
+##  Key Features
 
-### 1. Gestion du Matériel 
-* Inventaire complet avec photos des produits.
-* Suivi des états en temps réel : `DISPONIBLE`, `EN LOCATION`, `EN PANNE`, `EN MAINTENANCE`.
-* Module de maintenance dédié pour gérer les réparations et mises au rebut.
+### 1. Equipment Management 
+* Complete inventory with product photos.
+* Real-time status tracking: `AVAILABLE`, `RENTED`, `OUT OF ORDER`, `UNDER MAINTENANCE`.
+* Dedicated maintenance module to manage repairs and disposals.
 
-### 2. Gestion des Locations 
-* **Système Anti-Conflit :** Vérification automatique des chevauchements de dates pour éviter les doubles réservations.
-* **Calendrier Visuel :** Vue globale des locations passées, en cours et futures.
-* **Facturation :** Calcul automatique du coût total et gestion des pénalités de retard (Tarif x 2).
+### 2. Rental Management 
+* **Anti-Conflict System:** Automatic verification of date overlaps to prevent double bookings.
+* **Visual Calendar:** Global view of past, current, and future rentals.
+* **Invoicing:** Automatic calculation of total cost and management of late fees (Rate x 2).
 
-### 3. Gestion des Clients 
-* Base de données clients complète.
-* Historique des locations par client.
+### 3. Client Management 
+* Complete client database.
+* Rental history per client.
 
-### 4. Rapports & Exports 
-* Tableau de bord avec KPI (Revenu estimé, Retards, Taux d'occupation).
-* Génération de PDF pour les contrats ou les listes d'inventaire.
+### 4. Reports & Exports 
+* Dashboard with KPIs (Estimated revenue, Delays, Occupancy rate).
+* PDF generation for contracts or inventory lists.
 
 ---
 
-##  Architecture Technique
+## 🛠️ Technical Architecture
 
-Le projet respecte scrupuleusement l'architecture en couches **MVC / Service / DAO** pour garantir une maintenance facile et une séparation des responsabilités.
+The project scrupulously respects the **MVC / Service / DAO** layered architecture to ensure easy maintenance and separation of concerns.
 
 
 
 [Image of Layered Software Architecture]
 
 
-* **Vue (Presentation) :** FXML + JavaFX Controller. Interface moderne avec le thème *AtlantaFX (Cupertino Dark)*.
-* **Service (Métier) :** Contient toute la logique (calculs de prix, vérification de disponibilité, règles de gestion).
-* **DAO (Data Access) :** Gestion des transactions avec la base de données via **Hibernate** (ORM).
-* **Modèle :** Entités JPA mappées à la base de données.
+* **View (Presentation):** FXML + JavaFX Controller. Modern interface with the *AtlantaFX (Cupertino Dark)* theme.
+* **Service (Business Logic):** Contains all logic (price calculations, availability checks, business rules).
+* **DAO (Data Access):** Transaction management with the database via **Hibernate** (ORM).
+* **Model:** JPA entities mapped to the database.
 
 ---
 
-##  Installation & Démarrage
+##  Installation & Startup
 
-### Prérequis
-* **Java JDK 21** (ou supérieur).
-* **MySQL** ou **SQL Server** (WAMP/XAMPP recommandé pour MySQL).
-* **Maven** (pour la gestion des dépendances).
+### Prerequisites
+* **Java JDK 21** (or higher).
+* **MySQL** or **SQL Server** (WAMP/XAMPP recommended for MySQL).
+* **Maven** (for dependency management).
 
-### Étapes d'installation
+### Installation Steps
 
-1.  **Cloner le projet :**
-    
+1.  **Clone the project:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/TechRent.git](https://github.com/YOUR_USERNAME/TechRent.git)
+    cd TechRent
+    ```
 
-2.  **Configuration de la Base de Données :**
-    * Créez une base de données vide nommée `TechRentDB`.
-    * Si vous avez le script SQL fourni (`database_setup.sql`), exécutez-le. Sinon, Hibernate créera les tables au premier lancement.
-    * Modifiez le fichier `src/main/resources/hibernate.cfg.xml` avec vos identifiants :
+2.  **Database Configuration:**
+    * Create an empty database named `TechRentDB`.
+    * If you have the provided SQL script (`database_setup.sql`), execute it. Otherwise, Hibernate will create the tables upon first launch.
+    * Modify the `src/main/resources/hibernate.cfg.xml` file with your credentials:
         ```xml
         <property name="connection.username">root</property>
-        <property name="connection.password">votre_mot_de_passe</property>
+        <property name="connection.password">your_password</property>
         ```
 
-3.  **Lancer l'application :**
-    * Via IntelliJ / Eclipse : Exécutez la classe `com.techrent.App`.
-    * **Login par défaut :**
-        * Utilisateur : `admin`
-        * Mot de passe : `admin123`
+3.  **Launch the application:**
+    * Via IntelliJ / Eclipse: Run the `com.techrent.App` class.
+    * **Default Login:**
+        * User: `admin`
+        * Password: `admin123`
 
 ---
 
-##  Bibliothèques Utilisées
+##  Libraries Used
 
-* **JavaFX :** Framework GUI.
-* **Hibernate ORM :** Gestion de la persistance des données.
-* **CalendarFX :** Composant de calendrier professionnel.
-* **AtlantaFX :** Thèmes modernes pour JavaFX.
-* **iText / PDFBox :** Génération de rapports PDF.
-* **Lombok :** Réduction du code boilerplate (Getters/Setters).
+* **JavaFX:** GUI Framework.
+* **Hibernate ORM:** Data persistence management.
+* **CalendarFX:** Professional calendar component.
+* **AtlantaFX:** Modern themes for JavaFX.
+* **iText / PDFBox:** PDF report generation.
+* **Lombok:** Boilerplate code reduction (Getters/Setters).
 
 ---
