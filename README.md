@@ -13,7 +13,7 @@
 
 | Dashboard | Rental Planning |
 |:---:|:---:|
-| ![Dashboard](image_fbef28.png) | ![Planning](image_fb8672.png) |
+| Dashboard | Planning |
 | *Real-time statistics and alerts* | *Interactive calendar view (CalendarFX)* |
 
 ---
