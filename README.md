@@ -13,7 +13,7 @@
 
 | Tableau de Bord | Planning des Locations |
 |:---:|:---:|
-| ![Dashboard](https://via.placeholder.com/400x250.png?text=Dashboard+TechRent) | ![Planning](https://via.placeholder.com/400x250.png?text=Calendrier+Visuel) |
+| ![Dashboard] | ![Planning] |
 | *Statistiques en temps réel et alertes* | *Vue calendrier interactive (CalendarFX)* |
 
 ---
