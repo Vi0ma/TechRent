@@ -13,7 +13,7 @@
 
 | Tableau de Bord | Planning des Locations |
 |:---:|:---:|
-| ![Dashboard] | ![Planning] |
+| Dashboard | Planning |
 | *Statistiques en temps réel et alertes* | *Vue calendrier interactive (CalendarFX)* |
 
 ---
